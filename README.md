@@ -1,0 +1,1 @@
+A Forge client mod that records the coordinates of all the current players on the server over time and writes it to a CSV file.  This data can then be visualized.  Currently, the data processing and visualiztion is done with Mathematica.
