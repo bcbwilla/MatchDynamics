@@ -3,10 +3,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[         0,          0]
-NotebookDataLength[     26033,        572]
-NotebookOptionsPosition[     25514,        549]
-NotebookOutlinePosition[     25851,        564]
-CellTagsIndexPosition[     25808,        561]
+NotebookDataLength[     26402,        582]
+NotebookOptionsPosition[     25844,        558]
+NotebookOutlinePosition[     26181,        573]
+CellTagsIndexPosition[     26138,        570]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -20,8 +20,8 @@ Cell[BoxData[
      RowBox[{"mapName_:", "\"\<\>\""}], ",", 
      RowBox[{"stepSize_:", "1"}], ",", 
      RowBox[{"plotRange_:", "Automatic"}], ",", 
-     RowBox[{"plotRegular_:", "False"}], ",", 
-     RowBox[{"plotCom_:", "True"}], ",", 
+     RowBox[{"plotRegular_:", "True"}], ",", 
+     RowBox[{"plotCom_:", "False"}], ",", 
      RowBox[{"plot3d_:", "False"}], ",", 
      RowBox[{"debugPrint_:", "False"}]}], "]"}], ":=", 
    RowBox[{"(", "\[IndentingNewLine]", "\[IndentingNewLine]", 
@@ -254,7 +254,7 @@ Cell[BoxData[
                 "monumentPositions"}], "}"}], ",", "\[IndentingNewLine]", 
               RowBox[{"PlotRange", "\[Rule]", "plotRange"}], ",", 
               RowBox[{"PlotLabel", "\[Rule]", 
-               RowBox[{"\"\<Snowy Wars. Time: \>\"", "<>", 
+               RowBox[{"mapName", "<>", "\"\<. Time: \>\"", "<>", 
                 RowBox[{"ToString", "[", 
                  RowBox[{"Floor", "[", 
                   RowBox[{"end", "/", 
@@ -314,7 +314,7 @@ Cell[BoxData[
                RowBox[{"t13d", ",", "t23d"}], "}"}], ",", 
               RowBox[{"PlotRange", "\[Rule]", "Automatic"}], ",", 
               RowBox[{"PlotLabel", "\[Rule]", 
-               RowBox[{"\"\<Snowy Wars. Time: \>\"", "<>", 
+               RowBox[{"mapName", "<>", "\"\<. Time: \>\"", "<>", 
                 RowBox[{"ToString", "[", 
                  RowBox[{"Floor", "[", 
                   RowBox[{"end", "/", 
@@ -418,7 +418,9 @@ Cell[BoxData[
    3.588700118692388*^9}, {3.588700237951251*^9, 3.588700252755608*^9}, {
    3.588700302786725*^9, 3.588700361668577*^9}, 3.5887005182820883`*^9, {
    3.5887005500010567`*^9, 3.5887005801846867`*^9}, {3.588700821523481*^9, 
-   3.588700829463367*^9}, {3.5887011587981653`*^9, 3.588701163312257*^9}}],
+   3.588700829463367*^9}, {3.5887011587981653`*^9, 3.588701163312257*^9}, {
+   3.588702002936846*^9, 3.588702016956759*^9}, {3.588702205514574*^9, 
+   3.588702210959587*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -476,6 +478,13 @@ Cell[BoxData[
    3.588699491473989*^9}, {3.588699677761245*^9, 3.588699698011347*^9}, {
    3.588700429814921*^9, 3.58870045015983*^9}, 3.588700502197775*^9, {
    3.588700622004328*^9, 3.588700623599847*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{"\"\</home/ben/Desktop/sw_reg.gif\>\"", ",", "plots"}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.5887022425181103`*^9, 3.5887022461000032`*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -563,10 +572,11 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[400, 13, 20238, 407, 1881, "Input"],
-Cell[20641, 422, 2124, 55, 209, "Input"],
-Cell[22768, 479, 2457, 60, 231, "Input"],
-Cell[25228, 541, 282, 6, 32, "Input"]
+Cell[400, 13, 20352, 409, 1881, "Input"],
+Cell[20755, 424, 2124, 55, 209, "Input"],
+Cell[22882, 481, 213, 5, 32, "Input"],
+Cell[23098, 488, 2457, 60, 231, "Input"],
+Cell[25558, 550, 282, 6, 32, "Input"]
 }
 ]
 *)
