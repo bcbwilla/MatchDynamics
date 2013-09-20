@@ -1,0 +1,1 @@
+Unfortunately, github does not currently support mathematica notebooks, probably because of all the metadata embedded in the text files.  For this reason, it's not the best idea to view the notebook here.  The only reasonable way to check it out is to download it and open it yourself.
