@@ -3,10 +3,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[         0,          0]
-NotebookDataLength[     26402,        582]
-NotebookOptionsPosition[     25844,        558]
-NotebookOutlinePosition[     26181,        573]
-CellTagsIndexPosition[     26138,        570]
+NotebookDataLength[     28805,        646]
+NotebookOptionsPosition[     28168,        620]
+NotebookOutlinePosition[     28503,        635]
+CellTagsIndexPosition[     28460,        632]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -20,8 +20,8 @@ Cell[BoxData[
      RowBox[{"mapName_:", "\"\<\>\""}], ",", 
      RowBox[{"stepSize_:", "1"}], ",", 
      RowBox[{"plotRange_:", "Automatic"}], ",", 
-     RowBox[{"plotRegular_:", "True"}], ",", 
-     RowBox[{"plotCom_:", "False"}], ",", 
+     RowBox[{"plotRegular_:", "False"}], ",", 
+     RowBox[{"plotCom_:", "True"}], ",", 
      RowBox[{"plot3d_:", "False"}], ",", 
      RowBox[{"debugPrint_:", "False"}]}], "]"}], ":=", 
    RowBox[{"(", "\[IndentingNewLine]", "\[IndentingNewLine]", 
@@ -92,10 +92,12 @@ Cell[BoxData[
       RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
      RowBox[{"start", " ", "=", " ", "1"}], ";", "\[IndentingNewLine]", 
      RowBox[{"nFrames", " ", "=", " ", 
-      RowBox[{"Floor", "[", 
-       RowBox[{
-        RowBox[{"Length", "[", "listSplitPoints", "]"}], "/", "stepSize"}], 
-       "]"}]}], ";", " ", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Floor", "[", 
+        RowBox[{
+         RowBox[{"Length", "[", "listSplitPoints", "]"}], "/", "stepSize"}], 
+        "]"}], " ", "-", " ", "3"}]}], ";", " ", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
      RowBox[{"plotPoints", "=", " ", 
       RowBox[{"{", 
        RowBox[{
@@ -204,12 +206,8 @@ Cell[BoxData[
               RowBox[{"PlotRange", "\[Rule]", "plotRange"}], ",", 
               RowBox[{"PlotLabel", "\[Rule]", 
                RowBox[{"mapName", "<>", "\"\<. Time: \>\"", "<>", 
-                RowBox[{"ToString", "[", 
-                 RowBox[{"Floor", "[", 
-                  RowBox[{"end", "/", 
-                   RowBox[{"(", 
-                    RowBox[{"4", "*", "60"}], ")"}]}], "]"}], "]"}], "<>", 
-                "\"\<minutes\>\""}]}], ",", 
+                RowBox[{"ToString", "[", "i", "]"}], "<>", 
+                "\"\<seconds\>\""}]}], ",", 
               RowBox[{"AxesLabel", "\[Rule]", 
                RowBox[{"{", 
                 RowBox[{"\"\<x\>\"", ",", "\"\<z\>\""}], "}"}]}], ",", 
@@ -217,8 +215,9 @@ Cell[BoxData[
               RowBox[{"PlotLegends", "\[Rule]", 
                RowBox[{"{", 
                 RowBox[{
-                "\"\<Red\>\"", ",", "\"\<Blue\>\"", ",", "\"\<Monument\>\""}],
-                 "}"}]}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+                "\"\<Red\>\"", ",", "\"\<Blue\>\"", ",", 
+                 "\"\<Control Points\>\""}], "}"}]}]}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
            RowBox[{"AppendTo", "[", 
             RowBox[{"plots", ",", "p1"}], "]"}], ";"}]}], " ", 
          "\[IndentingNewLine]", "\[IndentingNewLine]", "]"}], ";", 
@@ -256,11 +255,8 @@ Cell[BoxData[
               RowBox[{"PlotLabel", "\[Rule]", 
                RowBox[{"mapName", "<>", "\"\<. Time: \>\"", "<>", 
                 RowBox[{"ToString", "[", 
-                 RowBox[{"Floor", "[", 
-                  RowBox[{"end", "/", 
-                   RowBox[{"(", 
-                    RowBox[{"4", "*", "60"}], ")"}]}], "]"}], "]"}], "<>", 
-                "\"\<minutes\>\""}]}], ",", 
+                 RowBox[{"Floor", "[", "i", "]"}], "]"}], "<>", 
+                "\"\<seconds\>\""}]}], ",", 
               RowBox[{"AxesLabel", "\[Rule]", 
                RowBox[{"{", 
                 RowBox[{"\"\<x\>\"", ",", "\"\<z\>\""}], "}"}]}], ",", 
@@ -269,7 +265,7 @@ Cell[BoxData[
                RowBox[{"{", 
                 RowBox[{
                 "\"\<Red COM\>\"", ",", "\"\<Blue COM\>\"", ",", 
-                 "\"\<Monument\>\""}], "}"}]}]}], "]"}]}], ";", 
+                 "\"\<Control Points\>\""}], "}"}]}]}], "]"}]}], ";", 
            "\[IndentingNewLine]", 
            RowBox[{"AppendTo", "[", 
             RowBox[{"plots", ",", "p2"}], "]"}], ";"}]}], " ", 
@@ -316,10 +312,7 @@ Cell[BoxData[
               RowBox[{"PlotLabel", "\[Rule]", 
                RowBox[{"mapName", "<>", "\"\<. Time: \>\"", "<>", 
                 RowBox[{"ToString", "[", 
-                 RowBox[{"Floor", "[", 
-                  RowBox[{"end", "/", 
-                   RowBox[{"(", 
-                    RowBox[{"4", "*", "60"}], ")"}]}], "]"}], "]"}], "<>", 
+                 RowBox[{"Floor", "[", "i", "]"}], "]"}], "<>", 
                 "\"\<minutes\>\""}]}], ",", 
               RowBox[{"AxesLabel", "\[Rule]", 
                RowBox[{"{", 
@@ -420,7 +413,10 @@ Cell[BoxData[
    3.5887005500010567`*^9, 3.5887005801846867`*^9}, {3.588700821523481*^9, 
    3.588700829463367*^9}, {3.5887011587981653`*^9, 3.588701163312257*^9}, {
    3.588702002936846*^9, 3.588702016956759*^9}, {3.588702205514574*^9, 
-   3.588702210959587*^9}}],
+   3.588702210959587*^9}, {3.588888851767888*^9, 3.588888851922202*^9}, {
+   3.588888904414084*^9, 3.5888889206718397`*^9}, 3.588888990999547*^9, {
+   3.588889121758891*^9, 3.588889124397764*^9}, {3.588889374895447*^9, 
+   3.588889389522624*^9}, {3.588889623399914*^9, 3.588889671610869*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -554,10 +550,76 @@ Cell[BoxData[
    RowBox[{"\"\</home/ben/Desktop/wl_com.gif\>\"", ",", "plots"}], "]"}], 
   ";"}]], "Input",
  CellChangeTimes->{{3.5887010752520237`*^9, 3.588701078507222*^9}, {
-   3.588701190271315*^9, 3.588701190804631*^9}, 3.58870124041748*^9}]
+   3.588701190271315*^9, 3.588701190804631*^9}, 3.58870124041748*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", "Storm", " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"data", " ", "=", " ", 
+     RowBox[{"Import", "[", 
+      RowBox[{
+      "\"\</home/ben/projects/plugins/MatchDynamics/analysis/data/storm--22-\
+09-2013--18-01-37.csv\>\"", ",", "\"\<CSV\>\""}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"observers", "=", "\"\<2852cc7e\>\""}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"team2", " ", "=", " ", "\"\<53ef78e0\>\""}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"monumentPositions", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0.5", ",", "0.5"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "40.5"}], ",", "34.5"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"41.5", ",", 
+         RowBox[{"-", "33.5"}]}], "}"}]}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"plotRange", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "75"}], ",", "75"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "85"}], ",", "85"}], "}"}]}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"mapName", " ", "=", " ", "\"\<Storm\>\""}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"stepSize", " ", "=", " ", "1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"MatchDynamics", "[", 
+    RowBox[{
+    "data", ",", "observers", ",", "team2", ",", "monumentPositions", ",", 
+     "mapName", ",", "stepSize", ",", "plotRange"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.588888013432424*^9, 3.588888013883853*^9}, {
+  3.588888047199459*^9, 3.58888807341661*^9}, {3.588888427812304*^9, 
+  3.588888476066235*^9}, {3.588888518829238*^9, 3.588888602999968*^9}, {
+  3.588888686129407*^9, 3.5888886873791637`*^9}, {3.588888737484522*^9, 
+  3.588888749857972*^9}, {3.588889175998159*^9, 3.5888891842956533`*^9}, {
+  3.588889229473858*^9, 3.588889234872699*^9}, {3.5888892709988527`*^9, 
+  3.588889275228594*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{"\"\</home/ben/Desktop/storm_com.gif\>\"", ",", "plots"}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.588889448334391*^9, 3.5888894534430323`*^9}, {
+  3.588889706187489*^9, 3.588889707086817*^9}}]
 },
-WindowSize->{1360, 691},
-WindowMargins->{{Automatic, -7}, {-7, Automatic}},
+WindowSize->{1366, 693},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
 StyleDefinitions->"Default.nb"
 ]
@@ -572,11 +634,13 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[400, 13, 20352, 409, 1881, "Input"],
-Cell[20755, 424, 2124, 55, 209, "Input"],
-Cell[22882, 481, 213, 5, 32, "Input"],
-Cell[23098, 488, 2457, 60, 231, "Input"],
-Cell[25558, 550, 282, 6, 32, "Input"]
+Cell[400, 13, 20274, 405, 1859, "Input"],
+Cell[20677, 420, 2124, 55, 209, "Input"],
+Cell[22804, 477, 213, 5, 32, "Input"],
+Cell[23020, 484, 2457, 60, 231, "Input"],
+Cell[25480, 546, 282, 6, 32, "Input"],
+Cell[25765, 554, 2133, 56, 209, "Input"],
+Cell[27901, 612, 263, 6, 32, "Input"]
 }
 ]
 *)
