@@ -47,10 +47,7 @@ public class MatchDynamics {
               MinecraftForge.EVENT_BUS.register(new MatchDynamicsEventHandler(instance));
               
               // Directory to store match data
-              File dataDirectory = new File("mods" + File.separator + "matchdynamics");
-              if (!dataDirectory.exists()) {
-            	  dataDirectory.mkdir();
-              }
+              FileUtil.createDataDirectory();
       }
      
       @EventHandler 

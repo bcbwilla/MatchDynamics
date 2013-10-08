@@ -51,7 +51,7 @@ public class MatchDynamicsEventHandler {
   		
   			try {
 	  	  		if(event.action == targetAction && heldItemId == Item.feather.itemID && !md.dataCollectorThread.isAlive()){
-	  	  			writer = new FileWriter(fileNameBuilder());	
+	  	  			writer = new FileWriter(FileUtil.fileNameBuilder());	
 	  		  		md.dataCollector = new DataCollector(world, writer);
 	  		  		md.dataCollectorThread = (new Thread(md.dataCollector));
 	  		  		md.dataCollectorThread.start();
@@ -69,16 +69,5 @@ public class MatchDynamicsEventHandler {
 			}
   		}
   	}
-  	
-  	/*
-  	 * Creates a file name for the data based on current date and time.
-  	 * The save path is hard coded in, so this needs to be changed accordingly.
-  	 */
-	private String fileNameBuilder() {
-		String base = "mods" + File.separator + "matchdynamics" + File.separator + "md--";
-		DateFormat df = new SimpleDateFormat("dd-MM-yyyy--HH-mm-ss");
-		Date date = new Date();
-		return base + df.format(date) + ".csv";
-	}
 }
 	
