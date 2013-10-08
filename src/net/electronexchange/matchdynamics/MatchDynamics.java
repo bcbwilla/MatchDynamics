@@ -1,5 +1,7 @@
 package net.electronexchange.matchdynamics;
 
+import java.io.File;
+
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
@@ -43,6 +45,12 @@ public class MatchDynamics {
               proxy.registerRenderers();
               // Register event handler to fire off DataCollector thread.
               MinecraftForge.EVENT_BUS.register(new MatchDynamicsEventHandler(instance));
+              
+              // Directory to store match data
+              File dataDirectory = new File("mods" + File.separator + "matchdynamics");
+              if (!dataDirectory.exists()) {
+            	  dataDirectory.mkdir();
+              }
       }
      
       @EventHandler 

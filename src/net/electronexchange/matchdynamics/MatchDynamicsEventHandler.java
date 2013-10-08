@@ -75,8 +75,7 @@ public class MatchDynamicsEventHandler {
   	 * The save path is hard coded in, so this needs to be changed accordingly.
   	 */
 	private String fileNameBuilder() {
-		//TODO Auto generate better save path based on user.
-		String base = "/home/ben/projects/plugins/MatchDynamics/analysis/data/md--";
+		String base = "mods" + File.separator + "matchdynamics" + File.separator + "md--";
 		DateFormat df = new SimpleDateFormat("dd-MM-yyyy--HH-mm-ss");
 		Date date = new Date();
 		return base + df.format(date) + ".csv";
